@@ -1,5 +1,7 @@
 package com.app.anime.model;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,8 +20,11 @@ public class RepositorioUsuario {
 
             try( PreparedStatement stmt = conn.prepareStatement(sql)) {
 
+                //Encripta la contraseña ingresada por el usuario sin necesidad de almacenarla en alguna variable
+                String contrasenaHasheada = BCrypt.hashpw(usuario.getContrasena(), BCrypt.gensalt());
+                
                 stmt.setString(1, usuario.getUsuario());
-                stmt.setString(2, usuario.getContrasena());
+                stmt.setString(2, contrasenaHasheada);
                 stmt.executeUpdate();
 
                 JOptionPane.showMessageDialog(null, "Registro exitoso.");
