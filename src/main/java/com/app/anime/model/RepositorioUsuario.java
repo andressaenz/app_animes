@@ -3,7 +3,6 @@ package com.app.anime.model;
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class RepositorioUsuario {
@@ -20,7 +19,7 @@ public class RepositorioUsuario {
             try( PreparedStatement stmt = conn.prepareStatement(sql)) {
 
                 stmt.setString(1, usuario.getUsuario());
-                stmt.setString(2, usuario.getContraseña());
+                stmt.setString(2, usuario.getContrasena());
                 stmt.executeUpdate();
 
                 JOptionPane.showMessageDialog(null, "Registro exitoso.");

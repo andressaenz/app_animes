@@ -9,6 +9,5 @@ public class AppAnimeApplication {
 
         Usuario usuarioPrueba = new Usuario("Andres", "Yoforever*");
         RepositorioUsuario.agregarNuevoUsuario(usuarioPrueba);
-
     }
 }

@@ -1,5 +1,7 @@
 package com.app.anime.model;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,9 +9,11 @@ import java.sql.SQLException;
 public class PostgresConector {
 
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/usuarios_db_app_animes";
-    private static final String USUARIO = "postgres";
-    private static final String CONTRASENA = "Adminpost2025*";
+    private static final Dotenv dotenv = Dotenv.load();
+
+    private static final String URL = dotenv.get("DB_URL");
+    private static final String USUARIO = dotenv.get("DB_USUARIO");
+    private static final String CONTRASENA = dotenv.get("DB_CONTRASENA");
 
     public static Connection getConnection() throws SQLException {
         try {
@@ -19,5 +23,4 @@ public class PostgresConector {
             return null;
         }
     }
-
 }

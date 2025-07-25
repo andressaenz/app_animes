@@ -2,11 +2,11 @@ package com.app.anime.model;
 
 public class Usuario {
     private String usuario;
-    private String contraseña;
+    private String contrasena;
 
-    public Usuario(String usuario, String contraseña){
+    public Usuario(String usuario, String contrasena){
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public String getUsuario() {
@@ -17,11 +17,11 @@ public class Usuario {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 }

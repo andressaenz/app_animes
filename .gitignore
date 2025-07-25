@@ -11,6 +11,7 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea/
 
 ### Eclipse ###
 .apt_generated
@@ -20,6 +21,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
 
 ### NetBeans ###
 /nbproject/private/
@@ -36,3 +38,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Variable de entorno ###
+.env
