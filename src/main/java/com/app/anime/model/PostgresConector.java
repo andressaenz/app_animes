@@ -15,7 +15,7 @@ public class PostgresConector {
     private static final String USUARIO = dotenv.get("DB_USUARIO");
     private static final String CONTRASENA = dotenv.get("DB_CONTRASENA");
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection obtenerConexion() throws SQLException {
         try {
             return DriverManager.getConnection(URL, USUARIO, CONTRASENA);
         }catch (Exception e){
