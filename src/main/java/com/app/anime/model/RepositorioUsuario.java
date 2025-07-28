@@ -2,8 +2,10 @@ package com.app.anime.model;
 
 import org.mindrot.jbcrypt.BCrypt;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class RepositorioUsuario {
@@ -42,7 +44,7 @@ public class RepositorioUsuario {
         String sql = "SELECT COUNT(*) FROM tbUsuarios WHERE usuario = ?";
         try(PreparedStatement stmt = conn.prepareStatement(sql)){
             stmt.setString(1,usuario);
-            var rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();
 
             if(rs.next()){
                 return rs.getInt(1)>0;
@@ -51,5 +53,27 @@ public class RepositorioUsuario {
             e.printStackTrace();
         }
         return false;
+    }
+
+    //Metodo para verificar la contraseña ingresada por el usuario
+    public static boolean verificarContrasena(Usuario usuario, Connection conn){
+
+        String sql = "SELECT contraseña FROM tbusuarios WHERE usuario = ?";
+        try(PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,usuario.getUsuario());
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()){
+                String hashAlmacenado = rs.getString("contraseña");
+
+                return BCrypt.checkpw(usuario.getContrasena(), hashAlmacenado);
+            } else {
+                return false;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

@@ -54,12 +54,13 @@ AppAnimeApplication/ <br>
 | `guardarUsuario(Usuario usuario, Connection conn)` | - Hashea la contraseña con BCrypt. <br> - Inserta el nuevo usuario en la base de datos. |
 | `crearTablaUsuarios(Connection conn)` | - Ejecuta SQL para crear la tabla `tbUsuarios` con: <br> - `id` autoincremental <br>- `usuario` único <br>- `contraseña` obligatoria |
 | `usuarioExiste(String usuario, Connection conn)` |- Consulta si el usuario ya existe en la base de datos.<br>- Devuelve `true` si encuentra coincidencias, `false` si no. |
-
+| `verificarContrasena(Usuario usuario, Connection conn)` | - Prepara una consulta SQL para obtener la contraseña hasheada. <br> - si encuentra el usuario: <br> -- Se obtiene el hash. <br> -- Se compara la contraseña ingresada usando `BCrypt.chekpw()`. <br> -- Devuelve `true` si coinciden. <br> - Si no encuentra el usuario o hay error devuelve `false`. |
 ---
 ### `ServicioUsuario.java`
 | Método | Descrpción                                                                              |
 |--------|-----------------------------------------------------------------------------------------|
 | `registraUsuario(Usuario usuario)` |- Obtiene una conexión a la base de datos.<br>- Crea la tabla `tbUsuarios` si no existe.<br>- Verifica si el usuario ya está registrado.<br>- Si no existe, guarda el usuario con contraseña hasheada.<br>- Muestra mensajes de éxito o error.|
+| `login(Usuario usuario)` |-
 ---
 
 ### `AppAnimeApplication.java`
