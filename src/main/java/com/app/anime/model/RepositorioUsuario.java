@@ -2,7 +2,6 @@ package com.app.anime.model;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

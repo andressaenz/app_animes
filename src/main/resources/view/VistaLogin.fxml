@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane styleClass="sp-login" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.anime.controller.ControladorLogin">
+
+    <AnchorPane>
+        <Label styleClass="logo-login" text="APP ANIMES" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="10" />
+    </AnchorPane>
+
+    <VBox fx:id="vboxLogin" alignment="CENTER_LEFT" maxHeight="700" maxWidth="500" prefWidth="807.0" spacing="10.0" styleClass="vbox-login">
+
+        <Label styleClass="titulo-label" text="Iniciar sesión">
+            <VBox.margin>
+                <Insets bottom="50" />
+            </VBox.margin>
+        </Label>
+
+        <TextField fx:id="loginUsuario" promptText="Ingrese su usuario" styleClass="login-usuario" />
+        <PasswordField fx:id="pwUsuario" promptText="Ingrese su contraseña" styleClass="pw-usuario" />
+
+        <Button fx:id="btnLogin" maxWidth="Infinity" onAction="#loginUsuario" styleClass="btn-login" text="Ingresar" />
+
+        <Hyperlink styleClass="link-login" text="¿Olvidaste la contraseña?" />
+        <CheckBox fx:id="recordarUsuario" styleClass="cbox-login" text="Recordarme" />
+    </VBox>
+</StackPane>

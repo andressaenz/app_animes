@@ -14,6 +14,7 @@ public class PostgresConector {
     private static final String USUARIO = dotenv.get("DB_USUARIO");
     private static final String CONTRASENA = dotenv.get("DB_CONTRASENA");
 
+
     //Metodo encargado de la conexion a la base de datos
     public static Connection obtenerConexion() throws SQLException {
 

@@ -1,0 +1,42 @@
+.titulo-label{
+    -fx-font-size: 30px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.logo-login{
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.login-usuario, .pw-usuario{
+    -fx-pref-height: 40px;
+    -fx-background-color: rgba(255,255,255,0.25);
+    -fx-border-color: #7209B7;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+}
+
+.btn-login{
+    -fx-background-color: #F72585;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-login:hover{
+    -fx-background-color: #B81D64
+}
+
+.link-login{
+    -fx-text-fill: #4CC9F0;
+}
+
+.cbox-login{
+    -fx-text-fill: white;
+}

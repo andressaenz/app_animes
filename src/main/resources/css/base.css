@@ -1,0 +1,16 @@
+.root{
+    -fx-font-family: "verdana";
+    -fx-background-color: linear-gradient(to bottom right, #3A0CA3, #222);
+}
+
+.sp-login{
+    -fx-padding: 40;
+
+}
+
+.vbox-login{
+
+    -fx-background-color: rgba(0,0,0,0.15);
+    -fx-background-radius: 10;
+    -fx-padding: 30;
+}
