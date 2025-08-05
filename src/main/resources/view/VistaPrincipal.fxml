@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.app.anime.controller.ControladorVistaPrincipal"
-            prefWidth="800" prefHeight="600">
-
+<BorderPane prefHeight="1000" prefWidth="700" styleClass="pane-principal" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.anime.controller.ControladorVistaPrincipal">
     <top>
-        <HBox styleClass="barra-superior">
-
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="barra-superior">
+            <Label styleClass="logo" text="A-A" />
+            <Button styleClass="btn-inicio" text="Inicio" />
+            <MenuBar>
+                <Menu text="Géneros ▼"  styleClass="menu-generos">
+                    <items>
+                        <MenuItem text="Acción"/>
+                        <MenuItem text="Aventura"/>
+                        <MenuItem text="Ciencia ficcion"/>
+                        <MenuItem text="terror"/>
+                    </items>
+                </Menu>
+            </MenuBar>
+            <Region fx:id="espaciador" HBox.hgrow="ALWAYS" />
+            <TextField promptText="Buscar..." styleClass="bar-buscar" />
+            <Button styleClass="btn-perfil" text="👤 ▼" />
+            <Button fx:id="btnCerrar" styleClass="btn-cerrar" text="X" />
         </HBox>
     </top>
-    <left>
-        <VBox styleClass="menu-lateral">
 
-        </VBox>
-    </left>
     <center>
-        <GridPane styleClass="contenido">
-
-        </GridPane>
+        <ScrollPane fitToWidth="true" >
+            <FlowPane fx:id="contenedorTarjetas" alignment="CENTER" hgap="20" vgap="20" styleClass="contenedor-tarjetas"  />
+        </ScrollPane>
     </center>
+    <Button>
+        <HBox alignment="CENTER_LEFT" prefHeight="100" spacing="20" styleClass="barra-superior">
+            <Label text="CON MUCHO AMOR ♥️" />
+        </HBox>
+    </Button>
 </BorderPane>
