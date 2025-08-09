@@ -3,69 +3,34 @@
     -fx-pref-height: 80px;
 }
 
-
-/* Diseño del logo */
-.logo {
-    -fx-font-size: 30px;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-
-
 /* Diseño de los botones de la barra superior*/
 .btn-inicio,
-.btn-perfil,
-.btn-cerrar {
+.btn-perfil{
     -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
+    -fx-font-size: 18px;
 }
 .btn-inicio:hover,
-.btn-perfil:hover,
-.btn-cerrar:hover {
+.btn-perfil:hover{
     -fx-background-color: #F72585;
     -fx-font-weight: bold;
-    -fx-background-radius: 5;
+    -fx-background-radius: 10px;
 }
-
-
-/* Diseño del menu desplegable "Género" */
-.context-menu{
-    -fx-background-color: rgba(0,0,0,0.1); /* Negro translucido */
-}
-.menu-bar,
-.menu-bar .label,
-.menu-bar .menu-item{
-    -fx-text-fill: white; /* Color de letra blanco */
-}
-.menu-bar,
-.menu-bar .menu,
-.menu-bar .menu-item{
-    -fx-background-color: transparent; /* Fondo transparente */
-}
-.menu-bar .menu:hover,
-.menu-bar .menu:showing,
-.menu-bar .menu-item:hover{
-    -fx-background-radius: 5;
-    -fx-background-color: #F72585;
-    -fx-font-weight: bold;
-}
-.menu-bar,
-.menu-bar .menu-item{
-    -fx-font-size: 14px; /* Tamaño de letra 14px */
-}
-
 
 /* Diseño de la barra de busqueda */
 .bar-buscar {
     -fx-background-radius: 5; /* Bordes redondeados */
     -fx-padding: 5; /* Espacio dentro delos bordes */
     -fx-pref-width: 200px; /* Ancho preferido */
+    -fx-pref-height: 40px;
 }
 
 
 /* Diseño del scroll-pane*/
-/* Se vuelve transparente el viewport y content para
+/* Vuelve transparente el viewport y content para
 poder obtener el color base */
 .scroll-pane,
 .scroll-pane > .viewport,

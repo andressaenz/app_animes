@@ -2,24 +2,25 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane prefHeight="1000" prefWidth="700" styleClass="pane-principal" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.anime.controller.ControladorVistaPrincipal">
     <top>
         <HBox alignment="CENTER_LEFT" spacing="20" styleClass="barra-superior">
-            <Label styleClass="logo" text="A-A" />
+            <ImageView fitHeight="60" fitWidth="60">
+                <Image url="@../img/logo_2.png"/>
+            </ImageView>
             <Button styleClass="btn-inicio" text="Inicio" />
-            <MenuBar>
-                <Menu text="Géneros ▼"  styleClass="menu-generos">
-                    <items>
-                        <MenuItem text="Acción"/>
-                        <MenuItem text="Aventura"/>
-                        <MenuItem text="Ciencia ficcion"/>
-                        <MenuItem text="terror"/>
-                    </items>
-                </Menu>
-            </MenuBar>
-            <Region fx:id="espaciador" HBox.hgrow="ALWAYS" />
+            <MenuButton fx:id="menuGeneros" text="Géneros" />
+            <Region HBox.hgrow="ALWAYS" />
             <TextField promptText="Buscar..." styleClass="bar-buscar" />
-            <Button styleClass="btn-perfil" text="👤 ▼" />
+            <MenuButton styleClass="btn-perfil" text="👤">
+                <items>
+                    <MenuItem text="Ver perfil"/>
+                    <MenuItem text="Configuración"/>
+                    <MenuItem text="Cerrar sesion"/>
+                </items>
+            </MenuButton>
             <Button fx:id="btnCerrar" styleClass="btn-cerrar" text="X" />
         </HBox>
     </top>
@@ -29,9 +30,8 @@
             <FlowPane fx:id="contenedorTarjetas" alignment="CENTER" hgap="20" vgap="20" styleClass="contenedor-tarjetas"  />
         </ScrollPane>
     </center>
-    <Button>
-        <HBox alignment="CENTER_LEFT" prefHeight="100" spacing="20" styleClass="barra-superior">
-            <Label text="CON MUCHO AMOR ♥️" />
-        </HBox>
-    </Button>
+
+    <bottom>
+        <Label text="♥ HECHO CON MUCHO AMOR ♥" styleClass="pie" BorderPane.alignment="CENTER"/>
+    </bottom>
 </BorderPane>

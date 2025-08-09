@@ -20,7 +20,8 @@ public class GestorEscena {
 
             scene.getStylesheets().addAll(
                     GestorEscena.class.getResource("/css/styleVistaPrincipal.css").toExternalForm(),
-                    GestorEscena.class.getResource("/css/styleVistaLogin.css").toExternalForm()
+                    GestorEscena.class.getResource("/css/styleVistaLogin.css").toExternalForm(),
+                    GestorEscena.class.getResource("/css/styleVistaGenerico.css").toExternalForm()
             );
 
             stage.setTitle(titulo);

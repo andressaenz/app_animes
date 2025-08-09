@@ -1,14 +1,9 @@
-.root{
-    -fx-font-family: "verdana";
-    -fx-background-color: linear-gradient(to bottom right, #3A0CA3, #222);
-}
-
 .sp-login{
     -fx-padding: 40;
 }
 
 .vbox-login{
-    -fx-background-color: rgba(0,0,0,0.15);
+    -fx-background-color: rgba(255,255,255,0.15);
     -fx-background-radius: 10;
     -fx-padding: 30;
 }
@@ -19,25 +14,26 @@
     -fx-font-weight: bold;
 }
 
-.logo-login{
-    -fx-font-size: 30px;
-    -fx-font-weight: bold;
-    -fx-text-fill: white;
+/* textField de usuario y contraseña */
+.login-usuario,
+.pw-usuario{
+    -fx-pref-height: 60px;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent white transparent;/* Solo deja el borde inferior */
+    -fx-border-width: 0 0 2px 0;/* Grosor del borde */
+    -fx-prompt-text-fill: white;/* Prompt en blanco */
+    -fx-text-fill: white;/* Texto ingresado en blanco */
 }
 
-.login-usuario, .pw-usuario{
-    -fx-pref-height: 40px;
-    -fx-background-color: rgba(255,255,255,0.25);
-    -fx-border-color: #7209B7;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
-    -fx-prompt-text-fill: white;
-    -fx-text-fill: white;
+.login-usuario:focused,
+.pw-usuario:focused{
+    -fx-prompt-text-fill: transparent;
 }
 
+/* Boton ingresar */
 .btn-login{
-    -fx-background-color: #F72585;
     -fx-text-fill: white;
+    -fx-background-color: #F72585;
     -fx-font-weight: bold;
     -fx-padding: 10 20;
     -fx-background-radius: 5;
@@ -45,19 +41,6 @@
 }
 
 .btn-login:hover{
-    -fx-background-color: #B81D64
+    -fx-background-color: linear-gradient(to right, #4CC9F0, #F72585);
 }
 
-.link-login{
-    -fx-text-fill: #4CC9F0;
-}
-
-.cbox-login{
-    -fx-text-fill: white;
-}
-
-.logo-principal{
-    -fx-font-size: 30px;
-    -fx-font-weight: bold;
-    -fx-text-fill: white;
-}

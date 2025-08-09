@@ -1,29 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<BorderPane styleClass="sp-login" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.anime.controller.ControladorLogin">
+    <top>
+        <StackPane>
+            <ImageView fitHeight="80" fitWidth="80" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                <image>
+                    <Image url="@../img/logo_2.png"/>
+                </image>
+            </ImageView>
 
-<StackPane styleClass="sp-login" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.anime.controller.ControladorLogin">
+            <Button text="X" styleClass="btn-cerrar" StackPane.alignment="CENTER_RIGHT"/>
+        </StackPane>
+    </top>
+    <center>
+        <BorderPane maxHeight="700" maxWidth="500" styleClass="vbox-login">
+            <top>
+                <VBox alignment="CENTER">
+                    <Label styleClass="titulo-label" text="Iniciar sesión" >
+                        <VBox.margin>
+                            <Insets top="20" bottom="20"/>
+                        </VBox.margin>
+                    </Label>
+                </VBox>
+            </top>
+            <center>
+                <VBox alignment="CENTER" spacing="20">
+                    <TextField fx:id="loginUsuario" promptText="Ingrese su usuario" styleClass="login-usuario" />
+                    <PasswordField fx:id="pwUsuario" promptText="Ingrese su contraseña" styleClass="pw-usuario" />
 
-    <AnchorPane>
-        <Label styleClass="logo-login" text="A-A" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="10" />
-    </AnchorPane>
+                    <Button fx:id="btnLogin" maxWidth="Infinity" onAction="#loginUsuario" styleClass="btn-login, text-blanco" text="Ingresar" />
 
-    <VBox fx:id="vboxLogin" alignment="CENTER_LEFT" maxHeight="700" maxWidth="500" spacing="10.0" styleClass="vbox-login">
+                    <Hyperlink styleClass="link" text="¿Olvidaste la contraseña?" />
+                    <CheckBox fx:id="recordarUsuario" styleClass="text-white" text="Recordarme" />
 
-        <Label styleClass="titulo-label" text="Iniciar sesión">
-            <VBox.margin>
-                <Insets bottom="50" />
-            </VBox.margin>
-        </Label>
-
-        <TextField fx:id="loginUsuario" promptText="Ingrese su usuario" styleClass="login-usuario" />
-        <PasswordField fx:id="pwUsuario" promptText="Ingrese su contraseña" styleClass="pw-usuario" />
-
-        <Button fx:id="btnLogin" maxWidth="Infinity" onAction="#loginUsuario" styleClass="btn-login" text="Ingresar" />
-
-        <Hyperlink styleClass="link-login" text="¿Olvidaste la contraseña?" />
-        <CheckBox fx:id="recordarUsuario" styleClass="cbox-login" text="Recordarme" />
-    </VBox>
-</StackPane>
+                </VBox>
+            </center>
+            <bottom>
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <Label text="¿Primera vez aquí?" styleClass="text-white"/>
+                    <Hyperlink text="Regístrate" styleClass="link"/>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </center>
+    <bottom>
+        <VBox alignment="CENTER">
+            <Label text="♥ HECHO AMOR POR YERSON A. ♥" styleClass="pie">
+                <VBox.margin>
+                    <Insets top="30"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </bottom>
+</BorderPane>
